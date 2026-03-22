@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yeger.Law</title>
+  <meta name="description" content="O‘zbekistonda davlat va dinning ajratilganligi haqida huquqiy ma’lumotlar sayti" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #000;
+      color: #fff;
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .hero {
+      padding: 100px 0;
+      background:
+        radial-gradient(circle at top, rgba(239,68,68,0.18), transparent 35%),
+        linear-gradient(135deg, #120909 0%, #000 45%, #190909 100%);
+      border-bottom: 1px solid rgba(127, 29, 29, 0.5);
+    }
+    .hero h1 {
+      font-size: 64px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .hero h1 span { color: #ef4444; }
+    .hero p {
+      max-width: 700px;
+      color: #d4d4d8;
+      font-size: 20px;
+    }
+    .section {
+      padding: 70px 0;
+    }
+    .section h2 {
+      font-size: 42px;
+      margin-bottom: 30px;
+    }
+    .grid {
+      display: grid;
+      gap: 24px;
+    }
+    .grid-3 {
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+    .grid-2 {
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+    .card {
+      background: #09090b;
+      border: 1px solid rgba(239,68,68,0.25);
+      border-radius: 28px;
+      padding: 28px;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(239,68,68,0.5);
+      box-shadow: 0 0 24px rgba(239,68,68,0.08);
+    }
+    .icon {
+      font-size: 28px;
+      color: #f87171;
+      margin-bottom: 16px;
+    }
+    .card h3 {
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+    .card p {
+      color: #a1a1aa;
+      font-size: 18px;
+    }
+    .detail-btn {
+      margin-top: 14px;
+      display: inline-block;
+      color: #f87171;
+      font-size: 14px;
+      font-weight: bold;
+    }
+    .contact-box {
+      background: #09090b;
+      border: 1px solid rgba(239,68,68,0.25);
+      border-radius: 24px;
+      padding: 30px;
+    }
+    .contact-box p {
+      color: #d4d4d8;
+      font-size: 18px;
+      margin-top: 10px;
+    }
+    .footer {
+      padding: 30px 0 50px;
+      text-align: center;
+      color: #71717a;
+      font-size: 14px;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.82);
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 999;
+    }
+    .modal.active {
+      display: flex;
+    }
+    .modal-box {
+      width: 100%;
+      max-width: 760px;
+      background: #09090b;
+      border: 1px solid rgba(239,68,68,0.25);
+      border-radius: 24px;
+      padding: 28px;
+    }
+    .modal-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+      gap: 16px;
+    }
+    .modal-top h3 {
+      font-size: 28px;
+    }
+    .close-btn {
+      background: transparent;
+      border: 1px solid rgba(239,68,68,0.25);
+      color: #fff;
+      border-radius: 12px;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+    .modal-content {
+      color: #d4d4d8;
+      white-space: pre-line;
+      font-size: 18px;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 42px; }
+      .hero p { font-size: 18px; }
+      .section h2 { font-size: 32px; }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="container">
+      <h1>Yeger<span>.Law</span></h1>
+      <p>
+        Professional huquqiy platforma. Ushbu saytda O‘zbekistonda davlat va dinning
+        ajratilganligi mavzusi bo‘yicha huquqiy ma’lumotlar jamlangan.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Xizmatlar</h2>
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="icon">⚖️</div>
+          <h3>Huquqiy maslahat</h3>
+          <p>Fuqarolik, mehnat va shartnomaviy masalalar bo‘yicha aniq va ishonchli maslahatlar.</p>
+        </div>
+        <div class="card">
+          <div class="icon">📄</div>
+          <h3>Hujjatlar tayyorlash</h3>
+          <p>Ariza, shikoyat, da’vo va turli huquqiy hujjatlarni professional tayyorlash xizmati.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🛡️</div>
+          <h3>Huquqiy himoya</h3>
+          <p>Mijoz manfaatlarini himoya qilish va nizolarni hal etish.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Huquqiy ma'lumotlar</h2>
+      <div class="grid grid-2">
+        <div class="card" onclick="openModal('Davlat va din ajratilganligi', article1)">
+          <div class="icon">📚</div>
+          <h3>Davlat va din ajratilganligi</h3>
+          <p>Davlat va din alohida tizim sifatida faoliyat yuritadi.</p>
+          <span class="detail-btn">Batafsil →</span>
+        </div>
+
+        <div class="card" onclick="openModal('Vijdon erkinligi', article2)">
+          <div class="icon">📚</div>
+          <h3>Vijdon erkinligi</h3>
+          <p>Har bir fuqaro e’tiqod erkinligiga ega.</p>
+          <span class="detail-btn">Batafsil →</span>
+        </div>
+
+        <div class="card" onclick="openModal('Diniy tashkilotlar maqomi', article3)">
+          <div class="icon">📚</div>
+          <h3>Diniy tashkilotlar maqomi</h3>
+          <p>Diniy tashkilotlar qonun asosida faoliyat yuritadi.</p>
+          <span class="detail-btn">Batafsil →</span>
+        </div>
+
+        <div class="card" onclick="openModal('Huquqiy tenglik', article4)">
+          <div class="icon">📚</div>
+          <h3>Huquqiy tenglik</h3>
+          <p>Barcha konfessiyalar teng huquqli.</p>
+          <span class="detail-btn">Batafsil →</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="contact-box">
+        <h2>Bog'lanish</h2>
+        <p>Email: abdullayevasliddin075@gmail.com</p>
+        <p>Telefon: +998 90 851 45 55</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="modal" id="modal">
+    <div class="modal-box">
+      <div class="modal-top">
+        <h3 id="modalTitle"></h3>
+        <button class="close-btn" onclick="closeModal()">Yopish</button>
+      </div>
+      <div class="modal-content" id="modalContent"></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="container">
+      Yeger.Law © 2026
+    </div>
+  </div>
+
+  <script>
+    const article1 = `O‘zbekiston Respublikasida davlat va din ajratilgan. Bu prinsip mamlakat Konstitutsiyasida mustahkamlangan bo‘lib, davlatning dunyoviy xarakterini ifodalaydi.
+
+Davlat hech bir dini rasmiy davlat dini sifatida tan olmaydi. Shu sababli barcha diniy konfessiyalar qonun oldida teng hisoblanadi.
+
+Diniy tashkilotlar davlat ishlariga aralashmaydi, davlat esa diniy faoliyatni qonun asosida tartibga soladi. Bu yondashuv jamiyatda barqarorlikni, bag‘rikenglikni va fuqarolar o‘rtasidagi tenglikni ta’minlaydi.
+
+Mazkur prinsipning ahamiyati shundaki, u davlat boshqaruvini diniy ta’sirdan holi saqlaydi va fuqarolarga o‘z e’tiqodini erkin tanlash imkonini beradi.`;
+
+    const article2 = `Vijdon erkinligi — har bir insonning o‘z diniy qarashlari va e’tiqodini mustaqil ravishda tanlash huquqidir.
+
+Fuqarolar istalgan dinga e’tiqod qilishi, diniy marosimlarni bajarishi yoki umuman hech qanday dinga ishonmasligi mumkin. Davlat bu huquqni hurmat qiladi va himoya qiladi.
+
+Vijdon erkinligi demokratik jamiyatning muhim belgilaridan biri bo‘lib, inson huquqlarining asosiy qismini tashkil etadi.`;
+
+    const article3 = `Diniy tashkilotlar davlatdan ajratilgan holda faoliyat yuritadi. Ular qonun hujjatlariga muvofiq ro‘yxatdan o‘tadi va o‘z faoliyatini belgilangan tartibda amalga oshiradi.
+
+Davlat diniy tashkilotlarning qonuniy faoliyatiga to‘sqinlik qilmaydi, aksincha ularning huquqiy maqomini tan oladi va himoya qiladi.
+
+Shu bilan birga, diniy tashkilotlar siyosiy hokimiyat funksiyalarini bajarmaydi va davlat boshqaruviga aralashmaydi.`;
+
+    const article4 = `Huquqiy tenglik prinsipi bo‘yicha barcha diniy konfessiyalar va e’tiqodlar qonun oldida tengdir.
+
+Hech bir din, diniy oqim yoki konfessiyaga imtiyoz berilmaydi. Bu esa fuqarolar o‘rtasida adolatni ta’minlashga xizmat qiladi.
+
+Mazkur prinsip diniy bag‘rikenglikni rivojlantiradi, turli e’tiqod vakillari o‘rtasida o‘zaro hurmatni mustahkamlaydi va jamiyat tinchligiga ijobiy ta’sir ko‘rsatadi.`;
+
+    function openModal(title, content) {
+      document.getElementById('modalTitle').innerText = title;
+      document.getElementById('modalContent').innerText = content;
+      document.getElementById('modal').classList.add('active');
+    }
+
+    function closeModal() {
+      document.getElementById('modal').classList.remove('active');
+    }
+
+    window.addEventListener('click', function(e) {
+      const modal = document.getElementById('modal');
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+  </script>
+</body>
+</html>
